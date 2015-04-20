@@ -1,0 +1,28 @@
+<h1 >Cageflix!</h1>
+<h3>Netflix for Nic Cage movies</h3>
+<br>
+<%= link_to "Add movie", new_movie_path %>
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+<table class="table table-striped">
+
+
+<% @movies.order(year: :desc).each do |movie| %>
+    <h3><%= movie.name %><b>&nbsp;&nbsp;&nbsp;(<%= movie.year %>)&nbsp;&nbsp;&nbsp;
+    <%= link_to "New Review", new_movie_review_path(movie) %></h3>
+
+
+    <h5><%= movie.synopsis %></h5>
+    <br>
+
+
+
+<% end %>
+
+  </tbody>
+
+</table>

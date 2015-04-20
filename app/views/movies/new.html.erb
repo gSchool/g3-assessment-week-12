@@ -1,0 +1,89 @@
+<% if @movie.errors.any? %>
+
+<h2 style="color:red"><%= pluralize(@movie.errors.count, "error") %> prohibited this record
+      from being saved: </h2>
+    <ul><% @movie.errors.full_messages.each do |message| %>
+      <li style="color:red"><%= message %></li>
+
+<% end %>
+</ul>
+<% end %>
+
+<br>
+<br>
+
+<h1>Cageflix!</h1>
+<h3>Netflix for Nic Cage movies</h3>
+<br>
+<hr>
+<h4>Add new movie:</h4>
+<br>
+
+
+<%= form_for(@movie) do |f| %>
+
+      <div class="form-group">
+        <div class="col-md-3">
+        <%= f.label :name %></div>
+        <div class="col-md-4">
+        <%= f.text_field :name %></div>
+      </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%= f.label :year %></div>
+      <div class="col-md-4">
+      <%= f.text_field :year %></div>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%= f.label :synopsis %></div>
+      <div class="col-md-4" >
+      <%= f.text_area :synopsis %></div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%= f.submit "Create movie", class: "btn btn-primary" %></div>
+    </div>
+
+    <br>
+
+<% end %>
+
+<!-- TYPES OF FIELDS
+check_box
+color_field
+date_field
+datetime_field
+datetime_local_field
+email_field
+fields_for
+file_field
+form_for
+hidden_field
+label
+month_field
+number_field
+password_field
+phone_field
+radio_button
+range_field
+search_field
+telephone_field
+text_area
+text_field
+time_field
+url_field
+week_field -->

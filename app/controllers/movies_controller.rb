@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movie = Movie.all
+    @movies = Movie.all
   end
 
   def new
@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to movie_path(@movie), notice: "Your movie has been created."
+      redirect_to movies_path, notice: "Your movie has been saved."
     else
       render :new
     end
@@ -43,8 +43,7 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:name, :year,
-    :synopsis, :name)
+    :synopsis)
   end
 
 end
-

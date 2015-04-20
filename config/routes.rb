@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  resources :reviews
   resources :users
   resources :movies do
     resources :reviews
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'login'   => 'sessions#create'
 
   get 'logout'  => 'sessions#destroy'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
