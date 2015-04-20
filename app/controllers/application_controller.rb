@@ -5,8 +5,15 @@ class ApplicationController < ActionController::Base
 
   def current_user
       User.find_by(id: session[:user_id])
-    end
+  end
 
+  def current_movie
+    if params[:movie_id].present?
+      Movie.find(params[:movie_id])
+    end
+  end
+
+    helper_method :current_movie
     helper_method :current_user
 
 end

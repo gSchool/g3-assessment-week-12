@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   #  get "/reviews/new" => "reviews#new"
 
   resources 'reviews'
-  
+  # post '/reviews' => 'reviews#create'
+
    resources 'movies' do
      resources 'reviews'
    end

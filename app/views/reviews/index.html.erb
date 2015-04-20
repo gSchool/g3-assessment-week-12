@@ -8,7 +8,6 @@
   </thead>
   <tbody>
     <% @reviews.each do |review| %>
-    <% binding.pry %>
     <tr>
       <td><%= review.movie.title %></td>
       <td><%= review.user.username %></td>

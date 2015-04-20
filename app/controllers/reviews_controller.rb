@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action :current_movie
 
   def index
-    @reviews = Review.all
+    @reviews = Review.order("created_at").reverse_order.all
   end
 
   def new
@@ -13,7 +14,7 @@ class ReviewsController < ApplicationController
     @movie = Movie.find_by(params[:movie_id])
     @review.user_id = current_user.id
     if @review.save
-      redirect_to movie_reviews_path(@movie)
+      redirect_to reviews_path
     else
       render :new
     end
@@ -21,7 +22,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:creator, :body, :title, :movie_id, :user_id)
+    params.require(:review).permit(:body, :title, :movie_id, :user_id)
   end
 
 end
