@@ -11,7 +11,7 @@
     <tr>
       <td><%= review.movie.name %></td>
       <td><%= review.user.username %></td>
-      <td><%= review.date %></td>
+      <td><%= review.date.strftime("%m/%d/%Y") %></td>
     </tr>
     <% end %>
   </tbody>
