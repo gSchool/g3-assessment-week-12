@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :users
+  resources :movies
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
-  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

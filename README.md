@@ -27,9 +27,9 @@ to add movies to our Cageflix database and also review them.
 
 ## Stories
 
-"As a user
-When I visit the home page
-Then I should see the site name and tag line
+"As a user v
+When I visit the home page v
+Then I should see the site name and tag line v
 
 
 
@@ -45,18 +45,18 @@ See mockups for error messages
 
 
 1. As a user
-    When I visit the home page
-    I see the homepage mockup.
+    When I visit the home page v
+    I see the homepage mockup. v
 
 
-2. As a user when I visit /movies
-    Then I should see the site name and tag line
-    <img src="project/images/01-home.png">
-    Cageflix
-    Netflix for Nic Cage movies
+2. As a user when I visit /movies v
+    Then I should see the site name and tag line v
+    <img src="project/images/01-home.png"> v
+    Cageflix v
+    Netflix for Nic Cage movies v
 
 
-2. As a user When I click ""Add Movie""
+2. As a user When I click ""Add Movie"" 
     And I fill in the new movie fields and click submit
     <img src="project/images/02-new-movie.png">
 
