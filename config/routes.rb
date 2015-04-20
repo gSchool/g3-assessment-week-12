@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   post '/signup' => 'registrations#create'
 
   get '/reviews' => 'reviews#index'
+  get '/reviews/new' => 'reviews#new'
+  post '/reviews' => 'reviews#create'
 
 end

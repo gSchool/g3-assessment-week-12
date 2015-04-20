@@ -1,4 +1,13 @@
-<%= form_for @review do |f| %>
+<% if @movie %>
+  <h2>Review for <%= @movie.name %></h2>
+<% else %>
+  <h2>Review</h2>
+<% end %>
+
+<%= form_for ([@movie, @review]) do |f| %>
+  <% if @movie %>
+    <%= f.collection_select :movie_id, Movie.order(:name), :id, :name, {include_blank: "Please select a movie..."} %><br /><br />
+  <% end %>
   <%= f.label :title, "Title" %>
   <%= f.text_field :title %><br /><br />
   <%= f.label :body, "Body" %>

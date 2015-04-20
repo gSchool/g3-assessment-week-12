@@ -7,6 +7,6 @@
 <br />
 
 <% @movies.each do |movie| %>
-  <h3><%= movie.name %> (<%= movie.year %>)</h3>
+  <h3><%= movie.name %> (<%= movie.year %>) <%= link_to "New Review", new_movie_review_path(movie) %></h3>
   <p><%= movie.synopsis %></p><br />
 <% end %>
