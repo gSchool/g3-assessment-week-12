@@ -2,6 +2,10 @@ class RegistrationController < ApplicationController
   def index
   end
 
+
+  def new
+  end
+  
   def create
      @user = User.new(user_params)
      if @user.save
@@ -16,5 +20,5 @@ class RegistrationController < ApplicationController
 private
 def user_params
    params.require(:user).permit(:username, :password)
-
+end
 end
