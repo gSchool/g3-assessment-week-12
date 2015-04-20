@@ -6,18 +6,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to new_project_path, notice: 'User Successfully Created!'
-    else
-      render :new
+
+      if @user.save
+        session[:user_id] = @user.id
+       redirect_to users_path, notice: 'User successfully created.'
+      else
+         render :new
+      end
     end
-  end
 
   private
 
   def user_params
-    params.require(:user).permit(:user_name, :password)
+    params.require(:user).permit(:username, :password_digest)
   end
 
 end

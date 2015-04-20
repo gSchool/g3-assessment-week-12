@@ -1,0 +1,13 @@
+<h1>Cageflix</h1>
+<h2>Netflix for Nic Cage Movies</h2>
+<h3><%= link_to 'Add Movie', new_movie_path %></h3>
+<br>
+<div class='row'>
+<div class='form-group'>
+<%= @movies.map do |movie| %>
+
+<h3><%= movie.name %>    <%= link_to 'Add Review', new_review_path %></h3>
+      <%= movie.synopsis %>
+<% end %>
+</div>
+</div>
