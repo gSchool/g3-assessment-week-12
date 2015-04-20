@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150420162517) do
   enable_extension "plpgsql"
 
   create_table "movies", force: true do |t|
-    t.string  "name"
+    t.string  "title"
     t.integer "year"
     t.text    "synopsis"
   end
