@@ -2,8 +2,8 @@
 
 <br><br>
 
-<!-- <%# @movies.each do |movie| %>
-  <h4><%# movie.name %> (<%# movie.year %>)</h4>
-  <p><%# movie.synopsis %></p>
+<% @movies.each do |movie| %>
+  <h4><%= movie.name %> (<%= movie.year %>)</h4>
+  <p><%= movie.synopsis %></p>
   <br>
-<%# end %> -->
+<% end %>
