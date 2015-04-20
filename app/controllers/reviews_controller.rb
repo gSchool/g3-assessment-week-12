@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all.sort_by(&:created_at)
+    @reviews = Review.all
     @user = current_user
   end
 
