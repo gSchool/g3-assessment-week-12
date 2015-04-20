@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>New Review for <%= @movie.name %></h1>
+</div>
+
+<%= form_for(@review) do |f| %>
+  <%= f.collection_select(:movie_id, Movie.all, :id, :name) %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>

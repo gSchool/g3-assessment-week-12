@@ -9,8 +9,11 @@
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>

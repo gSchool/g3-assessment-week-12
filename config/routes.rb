@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+  root 'welcome#index'
+
+
+  get '/movies/:movie_id/reviews/new' => 'reviews#new_movie_review'
+  post '/movies/:movie_id/reviews/new' => 'reviews#create_new_movie_review'
+  resources :movies do
+    resources :reviews
+  end
+  resources :users
+  resources :reviews
+
+
+  get '/login' => 'sessions#new', as: 'login'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy', as: 'logout'
+  get '/signup' => 'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
