@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
 
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end
   resources :users, only: [:new, :create]
   # Example resource route with sub-resources:
   #   resources :products do
