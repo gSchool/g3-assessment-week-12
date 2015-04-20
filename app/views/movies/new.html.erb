@@ -1,0 +1,22 @@
+<h1>Add your favorite movie to our catalog</h1>
+
+<%= form_for @movie do |f| %>
+<div>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</div>
+<br>
+<div>
+<%= f.label :about %>
+<%= f.text_area :about %>
+</div>
+<br>
+<div>
+<%= f.label :release_year %>
+<%= f.date_field :release_year %>
+</div>
+<br>
+<div>
+<%= f.submit 'Submit' %>
+</div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420165249) do
+ActiveRecord::Schema.define(version: 20150420174041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,22 @@ ActiveRecord::Schema.define(version: 20150420165249) do
   create_table "movies", force: true do |t|
     t.string   "title"
     t.text     "about"
-    t.date     "release_year"
+    t.datetime "release_year"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string "username"
