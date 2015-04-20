@@ -3,6 +3,8 @@
 <%= form_for :review, url: '/reviews' do |f| %>
   <% if params[:movie_id] == nil %>
     <p>Select a movie: <%= f.collection_select :movie_id, Movie.all, :id, :name %></p>
+  <% else %>
+    <%= f.hidden_field :movie_id, value: params[:movie_id] %>
   <% end %>
   <p>Title: <%= f.text_field :title %></p>
   <p>Body: <%= f.text_area :body %></p>
