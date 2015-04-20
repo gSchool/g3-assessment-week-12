@@ -1,0 +1,14 @@
+%h1 Reviews
+
+%table
+  %thead
+    %tr
+      %th Movie
+      %th Reviewer
+      %th Date
+  %tbody
+    - @reviews.each do |review|
+      %tr
+        %td= review.movie.name
+        %td= review.user.username
+        %td= review.created_at.strftime '%m/%e/%y'
