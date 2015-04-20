@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
-    @user = current_user
   end
 
   def new
@@ -23,7 +22,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to reviews_path
     else
-      render :new
+      redirect_to new_review_path
     end
   end
 

@@ -2,6 +2,14 @@
 
 <%= form_for([@movie, Review.new]) do |f| %>
 
+<% if @review.errors.any? %>
+  <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
   <% if params[:movie_id].present? %>
   <div>
     <%= f.label :title %>

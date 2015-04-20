@@ -1,3 +1,8 @@
+
+<% if current_user.present? %>
+<h4>Welcome <%= current_user.username %></h4>
+<% end %>
+
 <ul>
   <li><%= link_to "Movies", movies_path %></li>
   <li><%= link_to "Reviews", reviews_path %></li>
@@ -5,4 +10,5 @@
   <li><%= link_to "New Review", new_review_path %></li>
   <li><%= link_to "Sign Up", new_user_path %></li>
   <li><%= link_to "Login", 'sessions/new' %></li>
+  <li><%= link_to "Logout", 'sessions/destroy' %></li>
 </ul>

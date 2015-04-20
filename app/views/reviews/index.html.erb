@@ -6,7 +6,7 @@
   </thead>
 
   <tbody>
-    <% @user.reviews.sort_by(&:created_at).reverse.each do |review| %>
+    <% @reviews.sort_by(&:created_at).reverse.each do |review| %>
     <tr>
       <td><%= review.movie.name %></td>
       <td><%= review.user.username %></td>
