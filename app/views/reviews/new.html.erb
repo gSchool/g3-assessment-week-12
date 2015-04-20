@@ -1,0 +1,59 @@
+<% if current_page?('/reviews/new') %>
+
+<h1> New Review </h1>
+
+<% else  %>
+<% @movie = Movie.find(params[:movie_id]) %>
+
+<h1>  New Review for <%= @movie.name %> </h1>
+
+<% end  %>
+
+
+
+<%= form_for [@movie, @review] do |f| %>
+
+
+ <% if current_page?('/reviews/new') %>
+
+      <div class="form-group">
+        <div class="col-md-3">
+        <%= f.label :movie %></div>
+        <div class="col-md-4">
+        <%= f.collection_select :movie_id, Movie.all, :id, :name %></div>
+      </div>
+
+  <% end  %>
+
+
+    <br>
+    <br>
+
+      <div class="form-group">
+        <div class="col-md-3">
+        <%= f.label :title %></div>
+        <div class="col-md-4">
+        <%= f.text_field :title %></div>
+      </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%= f.label :body %></div>
+      <div class="col-md-4">
+      <%= f.text_area :body %></div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%= f.submit class: "btn btn-primary" %></div>
+    </div>
+
+    <br>
+
+<% end %>

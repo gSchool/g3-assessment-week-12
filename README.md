@@ -17,21 +17,21 @@ Then I should see the site name and tag line
 
 
 
+----------------------------------------------------
+
+I DON'T THINK THIS HAS ANYTHING TO DO WITH ANYTHING
 
 See mockups for error messages
 77493762,"Movies should be sorted by year, most recent first","",1,"Aug 18, 2014","Aug 24, 2014",feature,1,unstarted,"Aug 23, 2014",,,Hunter Gillane,"As a user
 
+-----------------------------------------------
 
 
 ## Mockups/Stories
 
-
-
-
 1. As a user
     When I visit the home page
     I see the homepage mockup.
-
 
 2. As a user when I visit /movies
     Then I should see the site name and tag line
