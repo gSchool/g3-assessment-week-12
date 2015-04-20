@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:create]
 
+  resources :movies do 
+    resources :reviews
+  end 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -22,7 +26,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :users, only: [:new]
+
 
   # Example resource route with options:
   #   resources :products do
