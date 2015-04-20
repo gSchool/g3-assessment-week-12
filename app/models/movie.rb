@@ -3,7 +3,7 @@ class Movie < ActiveRecord::Base
   validate :year_must_be_number
 
   def year_must_be_number
-    unless year == /^\d+$/
+    unless year.match(/^\d+$/)
       errors.add(:year, "is not a number")
     end
   end
