@@ -5,5 +5,5 @@ root 'welcome#index'
 resources :users
 resources :movies do
   resources :reviews
-
+end
 end
