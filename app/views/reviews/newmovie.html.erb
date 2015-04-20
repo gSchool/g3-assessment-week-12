@@ -1,0 +1,15 @@
+<h1>New Review</h1>
+
+<%= form_for([@movie, @review], :html => {class: "form-horizontal"}) do |f| %>
+
+<%= f.hidden_field :movie_id, :value => @movie.id %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_area :body %>
+
+<%= f.submit %>
+
+<% end %>

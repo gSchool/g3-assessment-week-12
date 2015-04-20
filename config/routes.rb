@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  get '/new_movie_review' => 'reviews#newmovie'
+  post '/new_movie_review' => 'reviews#createmovie'
+
 
     get '/signup' => 'users#new'
     post '/users' => 'users#create'
@@ -18,7 +21,11 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :movies
+    resources :movies do
+      resources :reviews
+    end
+
+    resources :reviews
 
   # Example resource route with options:
   #   resources :products do

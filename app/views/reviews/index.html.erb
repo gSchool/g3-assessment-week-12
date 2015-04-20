@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Reviewer</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.sort {|a,b| b.created_at <=> a.created_at }.each do |review| %>
+    <tr>
+      <td><%= review.movie.title %></td>
+      <td><%= review.user.username %></td>
+      <td><%= review.date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

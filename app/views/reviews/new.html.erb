@@ -1,0 +1,42 @@
+<h1>New Review</h1>
+
+<%= form_for([@review], :html => {class: "form-horizontal"}) do |f| %>
+<%= f.collection_select(:movie_id, Movie.all, :id, :title) %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_area :body %>
+
+<%= f.submit %>
+<% end %>
+
+<!-- binding.pry
+<% if @review.movie_id.present? %>
+<%= form_for([@movie, @review], :html => {class: "form-horizontal"}) do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_area :body %>
+
+<%= f.submit %>
+<% end %>
+
+<% else %>
+
+<%= form_for(@review, :html => {class: "form-horizontal"}) do |f| %>
+
+<%= f.collection_select(:movie_id, Movie.all, :id, :title) %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_area :body %>
+
+<%= f.submit %>
+<% end %>
+
+<% end %> -->

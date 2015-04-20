@@ -1,8 +1,8 @@
 <ul>
   <li><%= link_to 'Movies', movies_path %></li>
-  <li><%= link_to 'Reviews', '/#' %></li>
+  <li><%= link_to 'Reviews', reviews_path %></li>
   <li><%= link_to 'New Movie', new_movie_path %></li>
-  <li><%= link_to 'New Review', '/#' %></li>
+  <li><%= link_to 'New Review', new_review_path %></li>
   <% if current_user %>
   <li><%= link_to 'Logout', logout_path %></li>
   <% else %>
