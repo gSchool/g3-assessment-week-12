@@ -27,7 +27,6 @@ See mockups for error messages
 
 
 
-
 1. As a user
     When I visit the home page
     I see the homepage mockup.
@@ -39,7 +38,7 @@ See mockups for error messages
     Cageflix
     Netflix for Nic Cage movies
 
-
+    
 2. As a user When I click ""Add Movie""
     And I fill in the new movie fields and click submit
     <img src="project/images/02-new-movie.png">
