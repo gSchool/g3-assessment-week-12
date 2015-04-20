@@ -1,3 +1,19 @@
+movies have many reviews
+reviews belong to movies
+reviews belong to users
+users have many reviews
+
+movies: title:string,
+
+reviews: title:string, body:text, user_id
+
+users: username:string, password:string
+
+
+
+movies/1/review/new
+reviews/new
+
 # Week 12 Assessment
 
 We all know that when it comes to building a product, finding an underserved niche is key.
