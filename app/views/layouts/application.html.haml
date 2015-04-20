@@ -9,6 +9,11 @@
     %link{:href => "/assets/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
     %link{:href => "/assets/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
   %body
+    %div
+      - if current_user
+        Signed in as #{current_user.username}
+      - else
+        Not signed in
     - if notice
       .notice= notice
     - if alert
