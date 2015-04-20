@@ -1,0 +1,11 @@
+<h1>Add New Review</h1>
+
+<%= form_for :review, url: '/reviews' do |f| %>
+
+  <p>Select a movie: <%= f.collection_select :movie_id, Movie.all, :id, :name %></p>
+  <p>Title: <%= f.text_field :title %></p>
+  <p>Body: <%= f.text_area :body %></p>
+  <p><%= f.submit "Submit" %></p>
+  <%= f.hidden_field :user_id, value: @user.id %>
+
+<% end %>

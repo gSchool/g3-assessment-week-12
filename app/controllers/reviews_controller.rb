@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @review = Review.new
   end
 

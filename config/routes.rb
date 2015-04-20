@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resources :reviews, only: [:index, :new]
+  resources :reviews
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  post '/reviews' => 'reviews#create'
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
