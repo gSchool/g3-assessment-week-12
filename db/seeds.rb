@@ -11,4 +11,4 @@ movies = Movie.create([{name: 'The Wickerman', date: '2006', synopsis: 'A sherif
    {name: 'The Rock', date: '1996', synopsis: ' A mild-mannered chemist and an ex-con must lead the counterstrike when a rogue group of military men, led by a renegade general, threaten a nerve gas attack from Alcatraz against San Francisco.'}])
 
 
-user = User.create([{username: 'admin', password: 'password'}])
+user = User.create([{user_id: 1, username: 'admin', password: 'password'}])
