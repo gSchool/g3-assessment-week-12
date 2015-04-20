@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'registration/index'
 
-  get 'sessions/index'
+  get '/signin' => 'session#new', as: :signin
+  post '/signin' => 'sessions#create'
+
+  get '/signup' => 'registration#new', as: :signup
+  post '/signup' => 'registration#create'
 
   get 'reviews/index'
 
