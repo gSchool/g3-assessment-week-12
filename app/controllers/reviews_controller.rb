@@ -9,7 +9,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @movie = Movie.find(params[:movie_id])
     @review = Review.new(review_params)
+    @review.movie_id = @movie.id
     if @review.save
       redirect_to root_path, notice: "Review was successfully created"
     else
