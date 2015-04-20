@@ -11,6 +11,4 @@ class SessionsController < ApplicationController
       render :new, alert: "Wrong combination"
     end
   end
-
-
 end

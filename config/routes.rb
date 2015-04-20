@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
    get '/sign-up' => 'registrations#new'
    post '/sign-up' => 'sessions#create'
-   get '/login' => 'sessions#create'
+   get '/login' => 'sessions#new'
+   post '/login' => 'sessions#create'
    get '/dashboard' => 'dashboard#index'
    get '/reviews' => 'reviews#index'
 
