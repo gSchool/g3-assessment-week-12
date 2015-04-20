@@ -1,0 +1,20 @@
+<% if @movie.errors.any? %>
+  <div id = "red-errors">
+    <h4><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h4>
+    <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @movie do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %><br /><br />
+  <%= f.label :year, "Year of Movie" %>
+  <%= f.number_field :year %><br /><br />
+  <%= f.label :synopsis, "Synopsis" %>
+  <%= f.text_area :synopsis %><br /><br />
+  <%= f.submit %>
+<% end %>
