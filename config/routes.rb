@@ -12,6 +12,7 @@ Rails.application.routes.draw do
    get '/dashboard' => 'dashboard#index'
    get '/reviews' => 'reviews#index'
 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   resources :users do

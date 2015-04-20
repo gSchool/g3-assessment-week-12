@@ -15,7 +15,7 @@
     <% @movies.each do |movie| %>
 
     <p style="font-weight:bold;">
-      <%= "#{movie.name} (#{movie.year})" %>
+      <%= "#{movie.name} (#{movie.year})" %> <%= link_to "New Review", new_movie_review_path(movie)  %>
     </p>
     <p>
       <%= movie.synopsis %>
