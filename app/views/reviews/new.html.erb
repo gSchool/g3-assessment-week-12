@@ -2,7 +2,9 @@
 
 <%= form_for(@review) do |f| %>
 
+
 <div><%= f.collection_select :movie_id, Movie.all, :id, :name, { prompt: 'All Movies'} %></div>
+
 <br>
 <div>
   <%= f.label :title %>

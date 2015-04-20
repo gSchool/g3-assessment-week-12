@@ -26,9 +26,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'pry-byebug', :group => :development
+gem 'pry-rails', :group => :development
 group :test, :development do
-  gem 'pry-byebug'
-  gem 'pry-rails'
+
   gem 'better_errors'
   gem "rspec-rails", "~> 3.0.2"
   gem "capybara", "~> 2.4.1"

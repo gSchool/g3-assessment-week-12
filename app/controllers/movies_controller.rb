@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path
     else
+      flash[:notice]
       render :new
     end
   end
