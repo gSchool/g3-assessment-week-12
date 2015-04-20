@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
     @review.created_at = Time.now
     if @movie
       @review.movie_id = @movie.id
+      @review.user_id = current_user.id
       @review.save
       redirect_to movies_path, notice: "Review made!"
     elsif @user

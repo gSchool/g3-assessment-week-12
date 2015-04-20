@@ -9,10 +9,10 @@ class Review < ActiveRecord::Base
   end
 
   def get_movie(review)
-    @movie = Movie.find(review).name
+    Movie.find(review).name
   end
 
   def get_user(review)
-    @movie = User.find(review).name
+    User.find(review).name
   end
 end
