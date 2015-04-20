@@ -64,10 +64,10 @@ See mockups for error messages
     - name is required v
     - year is required v
     - year must be a number v
-    <img src="project/images/03-errors.png">
+    <img src="project/images/03-errors.png"> v
 
-4. When I visit the home page
-Then I should see the movies listed in chronological order (newer movies first) v 
+4. When I visit the home page v
+Then I should see the movies listed in v chronological order (newer movies first) v 
 
 5. When I hit New Review on homepage I am taken to a form to create a new review with a dropdown containing all the movies.
 

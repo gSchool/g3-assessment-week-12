@@ -2,9 +2,16 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :users
-  resources :movies
+  resources :reviews
+
+  resources :movies do
+    resources :reviews
+
+  end
+
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
