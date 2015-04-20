@@ -4,5 +4,7 @@
 
 - @movies.each do |movie|
   %div
-    %h4 #{movie.name} (#{movie.year})
+    %h4
+      #{movie.name} (#{movie.year})
+      #{link_to 'New Review', new_movie_review_path(movie)}
     %p= movie.synopsis
