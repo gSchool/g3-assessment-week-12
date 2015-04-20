@@ -1,5 +1,17 @@
 <%= form_for @movie do |f| %>
 
+<% if @movie.errors.any? %>
+  <div>
+    <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this <%= @movie.class %> from being saved:</h2>
+
+    <ul>
+    <% @movie.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
   <%= f.label :name %><br>
   <%= f.text_field :name %><br><br>
 
