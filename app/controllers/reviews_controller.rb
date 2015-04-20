@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   before_action :set_movie, only: [:new, :create]
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.sort_by { |review| Movie.find(review.movie_id).year }.reverse
   end
 
   def new

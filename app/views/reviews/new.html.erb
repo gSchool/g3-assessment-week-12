@@ -5,7 +5,7 @@
 <% end %>
 
 <%= form_for ([@movie, @review]) do |f| %>
-  <% if @movie %>
+  <% if !@movie %>
     <%= f.collection_select :movie_id, Movie.order(:name), :id, :name, {include_blank: "Please select a movie..."} %><br /><br />
   <% end %>
   <%= f.label :title, "Title" %>
