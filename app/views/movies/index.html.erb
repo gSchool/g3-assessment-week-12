@@ -4,7 +4,7 @@ Netflix for Nic Cage movies<br>
 <%= link_to "Add Movie", new_movie_path %><br> <br>
 
 <% @movies.each do |movie| %>
-<b><%= movie.name %> <%= movie.year.year %></b><%= link_to "New Review", new_movie_path %> <br>
+<b><%= movie.name %> <%= movie.year.year %></b> <%= link_to "New Review", new_movie_path %> <br>
 <%= movie.synopsis %><br><br>
 
 <% end %>
