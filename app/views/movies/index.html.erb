@@ -6,7 +6,7 @@
 
 <div>
   <% @movies.each do |movie| %>
-<li><b><%= movie.name %></b></li>
+<li><b><%= link_to movie.name, movie_path(movie) %></b></li>
 <li><%= movie.year %></li>
 <li><%= movie.synopsis %></li></br>
 
