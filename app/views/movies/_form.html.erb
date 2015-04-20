@@ -1,0 +1,14 @@
+<%= form_for @movie do |f| %>
+
+<% if @movie.errors.messages.each do |error| %>
+<%= error[0].to_s + " " +error[1][0] %><br>
+<% end %>
+<% end %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :year %>
+<%= f.text_field :year %><br>
+<%= f.label :synopsis %>
+<%= f.text_area :synopsis %><br><br>
+<%= f.submit %>
+<% end %>

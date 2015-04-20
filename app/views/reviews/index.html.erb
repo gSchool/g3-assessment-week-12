@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <td>
+        Movie
+      </td>
+      <td>
+        Reviewer
+      </td>
+      <td>
+        Date
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+    <tr>
+      <td>
+        <%= review.movie.name %>
+      </td>
+      <td>
+        <%= review.user.name %>
+      </td>
+      <td>
+        <%= review.created_at.strftime("%m/%d/%Y") %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

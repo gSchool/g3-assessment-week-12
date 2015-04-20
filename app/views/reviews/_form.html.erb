@@ -1,0 +1,11 @@
+
+<%= form_for [@movie, @review] do |f| %>
+  <% unless params[:movie_id] %>
+    <%= f.collection_select :movie_id, Movie.all, :id, :name%>
+  <% end %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
