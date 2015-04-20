@@ -1,0 +1,7 @@
+%h1 Cageflix
+%h3 Netflix for Nic Cage Movies
+
+- @movies.each do |movie|
+  %div
+    %h4 #{movie.name} (#{movie.year})
+    %p= movie.synopsis
