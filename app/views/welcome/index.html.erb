@@ -1,2 +1,10 @@
-<%= link_to 'Log In', signin_path %>
-<%= link_to 'Sign Up', users_path %>
+<% if flash[:notice] %>
+   <div class="notice"><%= flash[:notice] %></div>
+ <% end %>
+
+<%= link_to 'Movies', movies_path %><br>
+<%= link_to 'New Movie', new_movie_path %><br>
+<%# unless current_user %>
+<%= link_to 'Log In', signin_path %><br>
+<%= link_to 'Sign Up', users_path %><br>
+<%# end %>
