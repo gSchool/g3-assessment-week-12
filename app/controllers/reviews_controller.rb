@@ -1,7 +1,5 @@
 class ReviewsController < ApplicationController
 
-  # before_action :authenticate
-
 def new
   @review = Review.new
 end
