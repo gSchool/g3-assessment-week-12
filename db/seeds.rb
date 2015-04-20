@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Movie.create(name: 'Con Air', summary: "Just-paroled army ranger Cameron Poe (Nicolas Cage) is headed back to his wife (Monica Potter), but must fly home aboard a prison transport flight.", date: '12/01/1997')
+User.create(username: 'mlouie', password: 'password')
+Review.create(movie_id: 1, user_id: 1, title: 'Bad Ass Movie', body: 'Awesome Special Effects!')
