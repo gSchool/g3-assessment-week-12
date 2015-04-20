@@ -4,4 +4,20 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def new
+    @movie = Movie.new
+  end
+
+  def create
+    @movie = Movie.new(movie_params)
+    if @movie.save
+      redirect_to movies_path
+    end
+  end
+
+  private
+  def movie_params
+    params.require(:movie).permit(:title, :year, :description)
+  end
+
 end
