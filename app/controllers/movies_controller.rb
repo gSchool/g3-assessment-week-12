@@ -36,5 +36,7 @@ before_action :signin, only: [:create]
    end
 
    def signin
+      session[:user_id] = @user.id
+   end
 
 end
