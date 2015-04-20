@@ -56,18 +56,18 @@ See mockups for error messages
     Netflix for Nic Cage movies v
 
 
-2. As a user When I click ""Add Movie"" 
-    And I fill in the new movie fields and click submit
+2. As a user When I click ""Add Movie""
+    And I fill in the new movie fields and click submit v
     <img src="project/images/02-new-movie.png">
 
 3. Errors on new movie:
-    - name is required
-    - year is required
-    - year must be a number
+    - name is required v
+    - year is required v
+    - year must be a number v
     <img src="project/images/03-errors.png">
 
 4. When I visit the home page
-Then I should see the movies listed in chronological order (newer movies first)
+Then I should see the movies listed in chronological order (newer movies first) v 
 
 5. When I hit New Review on homepage I am taken to a form to create a new review with a dropdown containing all the movies.
 
