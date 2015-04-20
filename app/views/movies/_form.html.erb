@@ -1,0 +1,12 @@
+<%= form_for @movie do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :year %>
+<%= f.date_select :year, discard_month:true %>
+<br>
+<%= f.label :synopsis %>
+<%= f.text_field :synopsis %>
+<br>
+<%= f.submit %>
+<% end %>

@@ -1,11 +1,11 @@
 class MoviesController < ApplicationController
 
-def index
+  def index
 
-end
+  end
 
-def new
-
-end
+  def new
+    @movie = Movie.new
+  end
 
 end
