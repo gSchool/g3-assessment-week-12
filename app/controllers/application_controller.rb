@@ -8,5 +8,11 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
-  
+
+  def authenticate
+  redirect_to '/signin'
+  unless current_user
+  end
+end
+
 end
