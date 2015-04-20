@@ -10,14 +10,14 @@
 </head>
 <body>
   <%= link_to "Home", root_path %>
-  
+  <br>
+  <br>
   <% if notice %>
     <h4><%= notice %></h4>
   <% end %>
-  <br>
+
   <% if current_user %>
     <h5>Logged in as: <%= current_user.username %> - <%= link_to "Sign out", logout_path %></h5>
-    <br>
   <% end %>
 
 <%= yield %>
