@@ -1,0 +1,31 @@
+<h3>All whatevers</h3>
+
+<br>
+
+<table class="table table-striped">
+  <thead>
+    <th>whatever </th>
+    <th>whatever </th>
+    <th>whatever </th>
+    <th>whatever </th>
+  </thead>
+
+  <tbody>
+
+<%% @<%= mainthing %>s.each do |<%= mainthing %>| %>
+    <tr>
+      <td><%%= <%= mainthing %>.<%= mainthing_attribute_key1 %> %>
+      </td>
+      <td><%%= <%= mainthing %>.<%= mainthing_attribute_key2 %> %>
+      </td>
+      <td><%%= <%= mainthing %>.<%= mainthing_attribute_key3 %> %>
+      </td>
+      <td><%%= <%= mainthing %>.<%= mainthing_attribute_key4 %> %>
+      </td>
+    </tr>
+
+<%% end %>
+
+  </tbody>
+
+</table>

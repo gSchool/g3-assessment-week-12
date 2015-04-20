@@ -1,0 +1,86 @@
+<h1> New whatever </h1>
+
+<%%= form_for [@<%= belongsto %>, @<%= mainthing %>] do |f| %>
+
+      <div class="form-group">
+        <div class="col-md-3">
+        <%%= f.label :<%= belongsto %> %></div>
+        <div class="col-md-4">
+        <%%= f.collection_select :<%= belongsto %>_id, <%= belongsto.capitalize %>.all, :id, :INSERT %></div>
+      </div>
+
+    <br>
+    <br>
+
+      <div class="form-group">
+        <div class="col-md-3">
+        <%%= f.label :<%= mainthing_attribute_key1  %> %></div>
+        <div class="col-md-4">
+        <%%= f.text_field :<%= mainthing_attribute_key1 %> %></div>
+      </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%%= f.label :<%= mainthing_attribute_key2 %> %></div>
+      <div class="col-md-4">
+      <%%= f.text_field :<%= mainthing_attribute_key2 %> %></div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%%= f.label :<%= mainthing_attribute_key3 %> %></div>
+      <div class="col-md-4" >
+      <%%= f.email_field :<%= mainthing_attribute_key3 %> %></div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%%= f.label :<%= mainthing_attribute_key4 %> %></div>
+      <div class="col-md-4" >
+      <%%= f.password_field :<%= mainthing_attribute_key4 %> %></div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%%= f.submit class: "btn btn-primary" %></div>
+    </div>
+
+    <br>
+
+<%% end %>
+
+<!-- TYPES OF FIELDS
+check_box
+color_field
+date_field
+datetime_field
+datetime_local_field
+email_field
+fields_for
+file_field
+form_for
+hidden_field
+label
+month_field
+number_field
+password_field
+phone_field
+radio_button
+range_field
+search_field
+telephone_field
+text_area
+text_field
+time_field
+url_field
+week_field -->

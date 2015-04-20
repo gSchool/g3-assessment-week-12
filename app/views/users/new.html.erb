@@ -1,0 +1,32 @@
+<h1> Sign up! </h1>
+
+<%= form_for(@user) do |f| %>
+
+      <div class="form-group">
+        <div class="col-md-3">
+        <%= f.label :name %></div>
+        <div class="col-md-4">
+        <%= f.text_field :name %></div>
+      </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%= f.label :password %></div>
+      <div class="col-md-4">
+      <%= f.password_field :password %></div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <div class="col-md-3">
+      <%= f.submit class: "btn btn-primary" %></div>
+    </div>
+
+    <br>
+
+<% end %>
