@@ -5,7 +5,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(params.require(:user).permit(:username, :password))
 
+    if @user.save
+      redirect_to root_path, notice: 'user was created'
+    else
+      render :new
+    end
   end
 
 end
