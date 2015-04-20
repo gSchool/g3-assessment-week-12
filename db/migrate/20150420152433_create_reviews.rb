@@ -4,7 +4,8 @@ class CreateReviews < ActiveRecord::Migration
       t.string :title
       t.string :body
       t.integer :movie_id
-      t.movie :belongs_to
+      t.belongs_to :movie, index: true
+
 
       t.timestamps
     end
