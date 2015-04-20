@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   end
   resources :reviews
 
+  get '/signup' => 'registrations#new'
+  post '/signup' => 'registrations#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
