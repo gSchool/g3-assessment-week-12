@@ -9,4 +9,8 @@
     %link{:href => "/assets/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
     %link{:href => "/assets/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
   %body
+    - if notice
+      .notice= notice
+    - if alert
+      .alert= alert
     = yield
