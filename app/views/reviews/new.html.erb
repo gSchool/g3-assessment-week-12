@@ -14,17 +14,17 @@
   </div>
 <% end %>
 
-<% unless @movie.id == nil %>
+<% unless @movie %>
   <%= f.label :movie_id %><br>
   <%= f.collection_select :movie_id, Movie.all, :id, :name, {include_blank: 'All Movies'} %><br><br>
 <% end %>
 
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br><br>
+<%= f.label :title %><br>
+<%= f.text_field :title %><br><br>
 
-  <%= f.label :body %><br>
-  <%= f.text_field :body %><br><br>
+<%= f.label :body %><br>
+<%= f.text_field :body %><br><br>
 
-  <%= f.submit %>
+<%= f.submit %>
 
 <% end %>
