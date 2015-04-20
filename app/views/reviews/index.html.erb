@@ -5,7 +5,7 @@
     <th>Date</th>
   </thead>
 <% @movie.reviews.each do |mr| %>
-  <%= mr.movie.name %>
+  <strong><%= mr.movie.name %></strong>
   <%= mr.body %>
   <%= mr.user %>
 <% end %>
