@@ -1,0 +1,13 @@
+<%= link_to "Sign Up", new_user_path %></br>
+<%= form_for @user, url: signin_path do |f| %>
+  <% if f.object.errors.present? %>
+    <% f.object.errors.full_messages.each do |error| %>
+      <%= error %>
+        <% end %>
+    <% end %>
+  <%= f.label :username %>
+  <%= f.text_field :username, autofocus: true %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit "Login" %>
+<% end %>
