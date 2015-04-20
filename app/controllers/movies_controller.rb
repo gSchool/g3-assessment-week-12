@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.all.sort_by {|movie| movie.year}.reverse
   end
 
   def new
