@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'bcrypt', '~> 3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :test, :development do
+  gem 'pry-rails' 
+  gem 'pry-byebug'
   gem "rspec-rails", "~> 3.0.2"
   gem "capybara", "~> 2.4.1"
   gem "launchy", "~> 2.4.2"

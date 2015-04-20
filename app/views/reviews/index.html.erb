@@ -1,0 +1,18 @@
+<table>
+<thead>
+  <tr>
+    <th>Movie</th>
+    <th>Reviewer</th>
+    <th>Date</th>
+  </tr>
+</thead>
+
+<% @reviews.each do |review| %>
+<tr>
+<td><%= review.movie.name %> </td>
+<td><%= review.user.user_name %></td>
+<td><%= review.created_at.month %>/<%= review.created_at.day %>/<%= review.created_at.year %></td>
+</tr>
+<% end %>
+
+</table>
