@@ -1,13 +1,11 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @reviews = Review.order(date: :desc).all
   end
 
   def new
-    unless @movie == nil
-      @movie = Movie.find(params[:movie_id])
-    end
+    @movie = Movie.find(params[:movie_id])
     @review = Review.new
   end
 
@@ -16,6 +14,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.movie_id = @movie.id
     @review.user_id = current_user.id
+    @review.date = DateTime.now
     if @review.save
       redirect_to root_path, notice: "Review was successfully created"
     else
