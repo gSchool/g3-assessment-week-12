@@ -3,7 +3,7 @@
 <%= f.text_field :name %>
 <br>
 <%= f.label :year %>
-<%= f.date_select :year, discard_month:true %>
+<%= f.date_select :year, discard_month:true, :start_year => 1980, :end_year => Time.now.year %>
 <br>
 <%= f.label :synopsis %>
 <%= f.text_field :synopsis %>
