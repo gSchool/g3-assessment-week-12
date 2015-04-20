@@ -4,25 +4,31 @@ class ReviewsController < ApplicationController
    end
 
    def new
+      @movie = Movie.new(find(params[:movie_id]))
       @review = Review.new
    end
 
    def create
-      @review = Review.new(params[:id])
+      @review = Review.new(review_params)
       if @review.save
-         redirect_to movies_path
+         redirect_to movies_review_path(@movie)
       else
          render :new
       end
    end
 
+
+
+
    private
+   def set_review
+      @review = Review.find(params[:movie_id])
+   end
+
    def review_params
       params.require(:review).permit(:movie, :title, :body, :reviewer, :date)
    end
 
-   def set_review
-      @review = Review.find(params[:id])
-   end
+
 
 end
