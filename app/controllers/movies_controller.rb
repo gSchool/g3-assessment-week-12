@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:edit, :update, :destroy]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.all.order(:year).reverse
   end
 
   def new
