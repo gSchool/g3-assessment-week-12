@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
   post '/users' => 'users#create'
 
   # Example of regular route:
