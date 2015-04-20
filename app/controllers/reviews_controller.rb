@@ -18,14 +18,9 @@ class ReviewsController < ApplicationController
     # @review.movie_id = @movie.id
     if params[:movie_id].present?
       @movie = Movie.find(params[:movie_id])
-      # @review.movie_id = @movie.id
-      # @movie.id = @review.movie_id
-    end
-    if @movie.present?
-
       @review.movie_id = @movie.id
+      @review.save
     end
-
     if @review.save
       redirect_to movies_path
     else

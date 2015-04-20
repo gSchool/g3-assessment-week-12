@@ -12,11 +12,11 @@
 <% end %>
 
 <%= form_for(@movie) do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :year_produced %>
+<p><%= f.label :title %>
+<%= f.text_field :title %></p>
+<p><%= f.label 'Year' %>
 <%= f.text_field :year_produced %>
-<%= f.label :description %>
-<%= f.text_field :description %>
-<%= f.submit %>
+<p><%= f.label 'Synopsis' %>
+<%= f.text_area :description %>
+<p><%= f.submit 'Create Movie' %>
 <% end %>
