@@ -1,0 +1,13 @@
+<%= form_for [@movie, @review] do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <br />
+  <%= f.submit :submit %>
+
+<% end %>
+
+<%= link_to 'back', movies_path %>

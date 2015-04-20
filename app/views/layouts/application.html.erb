@@ -10,6 +10,13 @@
 </head>
 <body>
 
+<% if current_user %>
+  <%= "logged in as #{current_user.username}" %>
+  <%= link_to 'logout', logout_path %>
+  <br />
+  <br />
+<% end %>
+
 <%= yield %>
 
 </body>
