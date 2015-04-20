@@ -1,0 +1,16 @@
+
+<%= form_for [@movie, @review] do |f| %>
+
+<em><%= f.collection_select :movie_id, Movie.all, :id, :name, {include_blank: 'All Movies'} %></em>
+
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<br>
+
+<%= f.label :body %>
+<%= f.text_field :body %>
+
+<%= f.submit %>
+<% end %>
