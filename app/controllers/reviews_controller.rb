@@ -1,13 +1,21 @@
 class ReviewsController < ApplicationController
 
-	before_action :set_movie
+	before_action :user_logged_in!
+
+
+	def index
+	@movies = Movie.all
+	@reviews = Review.all
+	end 
 	
 	def new
+	@movie = Movie.find(params[:movie_id])
 	@review = Review.new
 	@movies = Movie.all
 	end 
 
 	def create
+	@movie = Movie.find(params[:movie_id])
   	@review = Review.new(review_params)
     @review.user_id = current_user.id
   	 if @review.save
@@ -22,9 +30,6 @@ class ReviewsController < ApplicationController
   	params.require(:review).permit(:title, :body, :date, :user_id, :movie_id)
   end 
 
-  def set_movie
-  	@movie = Movie.find(params[:movie_id])
-  end 
 
 end 
 

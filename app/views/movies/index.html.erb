@@ -3,7 +3,7 @@
 <br>
 
 
-<% @movies.each do |movie| %> 
+<% @movies.order(year: :desc).each do |movie| %> 
 
 <table>
 <tr>

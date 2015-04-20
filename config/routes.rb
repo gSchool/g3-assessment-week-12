@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
+
+resources :reviews, only: [:index]
+
+
   resources :users
   resources :sessions, only: [:create]
 
