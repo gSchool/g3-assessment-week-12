@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController::Base
 
   def new
     @review = Review.new
+    @movie = @review.movie.id
   end
 
   def create
