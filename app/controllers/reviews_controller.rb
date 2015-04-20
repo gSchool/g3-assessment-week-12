@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action: set_movie
+  before_action :set_movie
+
   def index
   end
 

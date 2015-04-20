@@ -11,11 +11,7 @@
   <tr>
     <td><%= m.synopsis %></td>
   </tr>
-  <tr>
-    <td>
-      <%= link_to "New Review", new_movie_review_path(m) %>
-    </td>
-  </tr>
 </table>
 
 <% end %>
+<%= link_to "New Review", new_movie_review_path(@movie) %>
