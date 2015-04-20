@@ -67,11 +67,11 @@ See mockups for error messages
     <img src="project/images/03-errors.png"> v
 
 4. When I visit the home page v
-Then I should see the movies listed in v chronological order (newer movies first) v 
+Then I should see the movies listed in v chronological order (newer movies first) v
 
-5. When I hit New Review on homepage I am taken to a form to create a new review with a dropdown containing all the movies.
+5. When I hit New Review on homepage I am taken to a form to create a new review with a dropdown containing all the movies. v
 
-5. When I visit the reviews page, I should see all of the reviews listed in date by newest first.
+5. When I visit the reviews page, I should see all of the reviews listed in date by newest first. v
 
 6. When I click New Review within a movie I am taken to a nested resource to create a review for that movie and the current user.
 
