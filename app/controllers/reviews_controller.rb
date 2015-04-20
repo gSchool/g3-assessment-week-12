@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.order(params[:created_at])
+    @reviews = Review.all.sort_by(&:created_at)
     @user = current_user
   end
 
@@ -17,12 +17,9 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    if params[:movie_id].present?
-      @movie = Movie.find(params[:movie_id])
-    else
-      @movie = Movie.find_by(params[:movie_id])
-    end
+    @movie = Movie.find(params[:movie_id])
     @review.movie_id = @movie.id
+
     if @review.save
       redirect_to reviews_path
     else
