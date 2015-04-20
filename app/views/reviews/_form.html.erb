@@ -1,0 +1,14 @@
+<%= form_for [@movie, @review] do |f| %>
+<%= render partial:'shared/errors', locals: {object: @review} %>
+
+<%= f.collection_select :movie_id, Movie.all, :id, :name, {include_blank: "All Movies"}, {class:"form-control"} %>
+
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_area :body %>
+
+<%= f.submit %>
+<% end %>

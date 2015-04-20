@@ -1,0 +1,23 @@
+
+
+
+<br>
+
+<table>
+  <thead>
+    <th>Movie</th>
+    <th>Year</th>
+    <th>Synopsis</th>
+  </thead>
+  <% @movies.each do |m| %>
+  <tr>
+    <strong><td><%= link_to "#{m.name}", movie_path(m) %></td></strong>
+    <td><%= "#{(m.year)}" %></td>
+    <td><%= m.synopsis %></td>
+    <td><%= link_to "New Review", new_movie_review_path(m) %></td>
+  </tr>
+  <% end %>
+
+</table>
+<br>
+<%= link_to "Add Movie", new_movie_path %>
