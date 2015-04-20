@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :test, :development do
+  gem "pry-rails"
+  gem "pry-byebug"
+  gem "better_errors"
   gem "rspec-rails", "~> 3.0.2"
   gem "capybara", "~> 2.4.1"
   gem "launchy", "~> 2.4.2"
