@@ -9,7 +9,8 @@
 <div>
 <% @movies.each do |movie| %>
 <strong><%= movie.title %>
-(<%= movie.year %>)</strong> <%= link_to 'New Review' %>
+(<%= movie.year %>)</strong>
+<%= link_to 'New Review', new_movie_review_path(movie) %>
 <br></div>
 <div><%= movie.body %>
 </div>

@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 root 'welcome#index'
 
-get '/sign-up'  => 'registrations#new', as: :signup
-post '/sign-up' => 'registrations#create'
+get '/sign-up'  => 'users#new', as: :signup
+post '/sign-up' => 'users#create'
 get '/sign-in' => 'authentications#new', as: :signin
 post '/sign-in' => 'authentications#create'
 

@@ -19,7 +19,7 @@ def create
 
 private
 def movie_params
-  params.require(:movie).permit(:title, :year, :body)
+  params.require(:movie).permit(:title, :year, :body, :review_id)
 end
 
 end

@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
 
-attr_accessor :username, :password
+
+has_secure_password
 
 has_many :reviews
+
+validates :username, presence: true
+validates :password, presence: true
 
 end
