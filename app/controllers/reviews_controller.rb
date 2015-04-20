@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController::Base
 
   def index
-    @reviews = Review.all
+    @reviews = Review.order(created_at: :desc)
   end
 
   def new
@@ -9,13 +9,17 @@ class ReviewsController < ApplicationController::Base
   end
 
   def create
-   @review = Review.new(movie_params)
+   @review = Review.new(review_params)
 
    if @review.save
      redirect_to '/'
    else
      render 'new'
    end
+  end
+
+  def review_params
+    params.require(:review).permit(:name, :year, :synopsis, :id, :movie_id, :user_id)
   end
 
 
