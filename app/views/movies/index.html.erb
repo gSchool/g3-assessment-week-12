@@ -3,13 +3,18 @@
 
 <br>
 <% @movies.each do |m| %>
-
+<% Movie.order(:year) %>
 <table>
   <tr>
     <td><%= m.name %> <%= "#{(m.year)}" %></td>
   </tr>
   <tr>
     <td><%= m.synopsis %></td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to "New Review", new_movie_review_path(m) %>
+    </td>
   </tr>
 </table>
 
