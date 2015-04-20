@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h1>Sign In</h1>
+</div>
+
+<%= form_tag '/login' %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag :password %>
+  <%= text_field_tag :password %>
+
+  <%= submit_tag "Login" %>
+<% end %>
