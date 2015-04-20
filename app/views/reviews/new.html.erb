@@ -7,8 +7,8 @@
   <div class= "errors">
   </div>
   <%end%>
-  <%end%>
-  
+
+
 <% if link_to new_review_path %>
 <div>
   <%= f.collection_select :movie_id, Movie.all, :id, :title, {include_blank: 'All Movies'}, {class: 'form-control'} %>
