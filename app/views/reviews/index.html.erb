@@ -9,8 +9,8 @@
   <tbody>
     <% @reviews.each do |review| %>
     <tr>
-      <td><%= review.movie_id.name %></td>
-      <td><%= review.user_id.username %></td>
+      <td><%= review.movie.name %></td>
+      <td><%= review.user.username %></td>
       <td><%= review.date %></td>
     </tr>
     <% end %>
