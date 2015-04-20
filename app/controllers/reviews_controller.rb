@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :set_movie
-
+  
   def index
+    @reviews = Review.all
   end
 
   def new
@@ -10,10 +11,11 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    # @review.user_id = current_user.id
+    @review.user_id = current_user.id
+
     @review.movie_id = @movie.id
     if @review.save
-      redirect_to movie_review_path(@movie)
+      redirect_to movie_path(@movie)
     else
       render :new
     end
@@ -28,4 +30,5 @@ class ReviewsController < ApplicationController
     def set_movie
       @movie = Movie.find(params[:movie_id])
     end
+
 end

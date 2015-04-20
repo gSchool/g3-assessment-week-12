@@ -1,22 +1,18 @@
-<% provide(:title, "Sign In") %>
 <h1>Sign In</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
 
-    <%= f.label :username %>
-    <%= f.text_field :username, class:"form-control" %>
+    <% if @sign_in_error %>
+      <%= @sign_in_error %>
+      <% end %>
+    <%= form_tag login_path do |f| %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, class:"form-control" %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username, nil, class:"form-control" %>
 
-    <%= f.submit "Sign In" %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, nil, class:"form-control" %>
+
+    <%= submit_tag "Sign In", login_path %>
     <% end %>
 
-    <p>
-      New user? <%= link_to "Sign Up now!", signup_path %>
-    </p>
-  </div>
-
-</div>
+    <p>New user? <%= link_to "Sign Up now!", signup_path %></p>

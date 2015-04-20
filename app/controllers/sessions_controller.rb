@@ -8,17 +8,12 @@ class SessionsController < ApplicationController
 
    if user && user.authenticate(params[:password])
      session[:user_id] = user.id
-     if session[:previous_path]
-       redirect_to session[:previous_path]
-     else
-       redirect_to movies_path, notice: 'Welcome back, stranger!'
-     end
+     redirect_to movies_path
    else
-     @sign_in_error = 'Username / password combination is invalid'
+     @sign_in_error = "Username / password combination is invalid"
      render :new
    end
  end
-  
 
   def destroy
     session.clear

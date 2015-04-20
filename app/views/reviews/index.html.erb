@@ -1,1 +1,14 @@
-<h1>Reviews for <%= "#{@movie.name}" %></h1>
+<table>
+  <thead>
+    <th>Movie</th>
+    <th>Reviewer</th>
+    <th>Date</th>
+  </thead>
+<% @movie.reviews.each do |mr| %>
+  <%= mr.movie.name %>
+  <%= mr.body %>
+  <%= mr.user %>
+<% end %>
+</table>
+
+<%= link_to "New Review", new_movie_review_path(@movie) %>
