@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post '/signup' => 'registration#create'
 
 
+resources :users
+
 resources :movies do
    resources :reviews
 end
