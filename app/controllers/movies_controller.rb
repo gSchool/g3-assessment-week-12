@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
       @movie.save
       redirect_to movies_path
     else
+      flash.now[:alert] = @movie.errors.full_messages.join("<br>")
       render :new
     end
   end
