@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: "Your user has been created."
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: "You have signed up."
     else
       render :new
     end
