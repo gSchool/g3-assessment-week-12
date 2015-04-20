@@ -6,12 +6,11 @@ Rails.application.routes.draw do
    root 'welcome#index'
    get "/login" => "sessions#new", as: "login"
    post "/login" => "sessions#create"
+   get 'users/new' => 'users#new'
+   post 'users/new' => 'users#create'
 
-  #  get "/reviews" => "reviews#index"
-  #  get "/reviews/new" => "reviews#new"
 
   resources 'reviews'
-  # post '/reviews' => 'reviews#create'
 
    resources 'movies' do
      resources 'reviews'
