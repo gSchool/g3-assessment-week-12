@@ -7,6 +7,13 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
+  def show
+    @movie = Movie.find(params[:id])
+    unless @movie.nil?
+      redirect_to new_movie_review_path(@movie)
+    end
+  end
+
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
