@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   post 'signup' => 'users#create'
 
   get 'login' => 'sessions#new', as: :login
-  post 'create' => 'sessions#create'
+  post 'login' => 'sessions#create'
+
+  get 'logout' => 'sessions#destroy', as: :logout
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
