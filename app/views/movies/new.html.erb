@@ -1,8 +1,18 @@
+
 <h1>Cageflix</h1>
 
 <h3>Netflix for Nic Cage movies</h3>
 
+
 <%= form_for @movie do |f| %>
+
+<% if @movie.errors.any? %>
+<ul>
+  <% @movie.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
 
 <div><%= f.label :title, 'Name' %>
 <%= f.text_field :title %></div>

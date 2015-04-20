@@ -1,5 +1,8 @@
 class MoviesController < ApplicationController
 
+# before_action :authenticate
+
+
 def index
   @movies = Movie.all
 end
@@ -19,7 +22,7 @@ def create
 
 private
 def movie_params
-  params.require(:movie).permit(:title, :year, :body, :review_id)
+  params.require(:movie).permit(:title, :year, :body)
 end
 
 end

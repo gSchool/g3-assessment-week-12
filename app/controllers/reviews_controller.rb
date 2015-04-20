@@ -1,25 +1,30 @@
 class ReviewsController < ApplicationController
 
+  # before_action :authenticate
+
 def new
   @review = Review.new
 end
 
 def index
   @reviews = Review.all
-
+  @movies = Movie.all
 end
 
 def create
-  @movie = Movie.find(params[:movie_id])
   @review = Review.new(review_params)
-  @review.movie_id = @movie.id
-  @review.user_id = current_user
+  @review.user_id = current_user.id
   if @review.save
     redirect_to root_path
   else
     render :new
   end
 end
+
+def show
+@reviews = Review.all
+end
+
 
 private
 def review_params

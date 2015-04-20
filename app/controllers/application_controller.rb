@@ -4,13 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    User.find_by(id: session[:user_id])
-  end
+   if session[:user_id]
+   @current_user ||= User.find(session[:user_id])
+   end
+end
 
   helper_method :current_user
 
   def authenticate
-  redirect_to '/signin'
+  redirect_to '/sign-in'
   unless current_user
   end
 end
