@@ -1,3 +1,5 @@
+
+<%= link_to "Sign Up", signup_path %>
 <%= link_to "Add Movie", new_movie_path %>
 
 
@@ -11,7 +13,11 @@
   <tr>
     <td><%= m.synopsis %></td>
   </tr>
+  <tr>
+    <td>
+      <%= link_to "New Review", new_movie_review_path(m) %>
+    </td>
+  </tr>
 </table>
 
 <% end %>
-<%= link_to "New Review", new_movie_review_path(@movie) %>
