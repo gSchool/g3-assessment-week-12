@@ -3,9 +3,9 @@ reviews belong to movies
 reviews belong to users
 users have many reviews
 
-movies: title:string,
+movies: title:string, description:string
 
-reviews: title:string, body:text, user_id
+reviews: title:string, body:text, date
 
 users: username:string, password:string
 
