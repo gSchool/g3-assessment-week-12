@@ -7,12 +7,12 @@
     </tr>
   </thead>
   <tbody>
-
-    <tr>
-      <td>Movie Name</td>
-      <td>Reviewer Username</td>
-      <td>Date</td>
-    </tr>
-
+    <% @reviews.each do |review| %>
+      <tr>
+        <td> <%= review.movie.name %></td>
+        <td> <%= review.user.username %></td>
+        <td> <%= review.created_at %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
