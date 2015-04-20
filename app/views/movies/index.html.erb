@@ -1,7 +1,17 @@
  <h1>Cageflix</h1>
 
- <h3>Newflix for Nic Cage movies</h3>
+ <h3>Netflix for Nic Cage movies</h3>
 
- <%= link_to 'Add Movie' %>
+ <%= link_to 'Add Movie', new_movie_path %>
+<br>
+<br>
 
- 
+<div>
+<% @movies.each do |movie| %>
+<strong><%= movie.title %>
+(<%= movie.year %>)</strong> <%= link_to 'New Review' %>
+<br></div>
+<div><%= movie.body %>
+</div>
+<br>
+<% end %>

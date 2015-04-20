@@ -11,7 +11,13 @@ get '/sign-in' => 'authentications#new', as: :signin
 post '/sign-in' => 'authentications#create'
 
 resources :users
-resources :movies
+
+resources :movies do
+  resources :reviews
+end
+
+resources :reviews
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
