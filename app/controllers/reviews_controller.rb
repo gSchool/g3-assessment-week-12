@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:text)
+    params.require(:review).permit(:movie_id, :title, :body)
   end
 
 end
