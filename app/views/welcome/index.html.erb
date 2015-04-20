@@ -1,15 +1,13 @@
-<strong> <h1> Cageflix </h1> </strong>
-<h2> Netflix for Nic Cage Movies </h2>
-<%= link_to 'Add Movie', new_movie_path %>
+<strong> <h1> Welcome to Cageflix </h1> </strong>
 
+<%= link_to 'Movies', movies_path %>
 
-<hr>
+<%= link_to 'Reviews', reviews_path %>
 
+<%= link_to 'New Movie', new_movie_path %>
 
-<h3> The Wickerman (2006) </h3>
-<div class="text"> <%= link_to 'New Review', new_movie_review_path(@movie, @review) %> </div>
-<p> A sheriff investigating the disappearance of a young girl from a small island discovers there's a larger mystery to solve among the island's secretive, neo-pagan community.</p>
+<%= link_to 'New Review', new_movie_review_path %>
 
-<h3> The Rock (1996) </h3>
-<div class="text"> <%= link_to 'New Review', new_movie_review_path(@movie, @review) %> </div>
-<p> A mild-mannered chemist and an ex-con must lead the counterstrike when a rogue group of military men, led by a renegade general, threaten a nerve gas attack from Alcatraz against San Francisco. </p>
+<%= link_to 'Sign Up' %>
+
+<%= link_to 'Login' %>
