@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_movie, :set_user, only: [:new, :create]
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.order("created_at DESC")
   end
 
   def new
@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
+    @review.created_at = Time.now
     if @movie
       @review.movie_id = @movie.id
       @review.save
