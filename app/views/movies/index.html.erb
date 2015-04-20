@@ -7,7 +7,7 @@
 <% Movie.order(:year) %>
 <table>
   <tr>
-    <td><%= m.name %> <%= "#{(m.year)}" %></td>
+    <td><%= link_to "#{m.name}", movie_path(m) %> <%= "#{(m.year)}" %></td>
   </tr>
   <tr>
     <td><%= m.synopsis %></td>
