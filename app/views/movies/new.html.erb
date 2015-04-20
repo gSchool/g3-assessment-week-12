@@ -1,17 +1,16 @@
 <h1> Add New Movie </h1>
 
-<%= form_for(@movie, html: {class: 'form-horizontal'}) do |f| %>
-
+<%= form_for @movie, html: {class: 'form-horizontal'} do |f| %>
 
 <%= f.label :name %>
-<%= f.text_field :name, class: 'form-control' %>
+<%= f.text_field :name, class: 'form-control' %> <br>
 
-<%= f.label :year %>
-<%= f.number_field :year %>
+<%= f.label :date %>
+<%= f.text_field :date %><br>
 
 <%= f.label :synopsis %>
-<%= f.text_area :synopsis %>
+<%= f.text_area :synopsis %><br>
 
-<%= f.submit %>
+<%= f.submit %><br>
 
 <% end %>
