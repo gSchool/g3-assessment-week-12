@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
    end
 
    def new
-      @movie = Movie.new(params[:id])
+      @movie = Movie.new
    end
 
    def create
@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
    end
 
    def movie_params
-      params.require(:movie).permit(:name, :year, :synopsis)
+      params.require(:movie).permit(:name, :date, :synopsis)
    end
 
 

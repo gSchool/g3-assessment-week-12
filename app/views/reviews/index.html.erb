@@ -1,2 +1,23 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<h1>Reviews</h1>
+<table class="table table-striped">
+   <thead>
+      <th>Movie</th>
+      <th>Reviewer</th>
+      <th>Date</th>
+
+      <tbody>
+         <% @reviews.each do |review| %>
+         <tr>
+         <td>
+            <%= review.movie %>
+         </td>
+         <td>
+            <%= review.reviewer %>
+         </td>
+         <td>
+            <%= review.date %>
+         </tr>
+            <% end %>
+      </tbody>
+   </thead>
+</table>

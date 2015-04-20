@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'registration/index'
 
   get '/signin' => 'session#new', as: :signin
   post '/signin' => 'sessions#create'
@@ -8,9 +7,7 @@ Rails.application.routes.draw do
   post '/signup' => 'registration#create'
 
   get 'reviews/index'
-
-  get 'movies/index'
-
+  get 'reviews/new'
 
 resources :movies do
    resources :reviews

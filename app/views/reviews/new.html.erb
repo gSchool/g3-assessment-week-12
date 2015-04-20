@@ -3,5 +3,16 @@
 
 <hr>
 
-<% form_for  %>
-<%= f.collection_select :movie_id, Movies.all, :id,  %>
+<% form_for @review do |f| %>
+
+<%= f.collection_select :movie_id, Movies.all, :id, :name, {class: "form-horizontal"} %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_field :body %>
+
+<%= f.submit %>
+
+<% end %>
