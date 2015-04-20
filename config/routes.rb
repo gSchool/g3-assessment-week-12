@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resources :movies
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
