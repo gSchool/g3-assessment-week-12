@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :movies do
     resources :reviews
   end
+  resources :reviews
 
   get '/signup' => 'registrations#new'
   post '/signup' => 'registrations#create'
