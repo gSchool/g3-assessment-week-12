@@ -1,0 +1,22 @@
+<h1>Cageflix</h1>
+<h2>Netflix for Nic Cage movies</h2>
+
+<% @movie.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+<% end %>
+
+<%= form_for(@movie) do |f| %>
+
+<p><%= f.label :name %></p>
+  <%= f.text_field :name %>
+<p><%= f.label :year %></p>
+  <%= f.text_field :year %>
+<p><%= f.label :synopsis %></p>
+  <%= f.text_field :synopsis %>
+<br>
+<br>
+<div>
+  <%= f.submit 'Create Movie' %>
+</div>
+
+<% end %>
