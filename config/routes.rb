@@ -5,12 +5,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :users do
+  resources :users
+
+  resources :movies do
     resources :reviews
   end
-  resources :movies
+
   get 'sessions/new' => 'sessions#new'
   post 'sessions/new' => 'sessions#create'
+
+  resources :reviews
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
