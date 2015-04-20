@@ -1,8 +1,18 @@
+<h1>New Review</h1>
+
+<div class = "errors">
+<% if @movie.errors.full_messages.any? %>
+  <% @movie.errors.full_messages.each do |message| %>
+  <%= message %><br>
+  <% end %>
+<% end %>
+</div>
+
 <%= form_for @movie do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %><br>
 <%= f.label :year %>
-<%= f.number_field :year %><br>
+<%= f.text_field :year %><br>
 <%= f.label :synopsis %>
 <%= f.text_area :synopsis %><br>
 <%= f.submit %>
