@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   post 'reviews/new' => 'reviews#create'
 
   resources :movies do
-    resources :reviews
+    resources :reviews, except: :index
   end
 
+  resources :reviews, only: :index
   resources :users, only: [:new, :create]
   # Example resource route with sub-resources:
   #   resources :products do
