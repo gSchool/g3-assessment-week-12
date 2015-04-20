@@ -10,8 +10,8 @@
   <tbody>
 <tr>
   <% @reviews.each do |review| %>
-  <td><%= review.movie_id%></td>
-  <td><%=review.user_id%></td>
+  <td><%=review.movie_id%></td>
+  <td><%=review.user_id %></td>
   <td><%=review.created_at.strftime("%m/%d/%Y") %></td>
 
 </tr>

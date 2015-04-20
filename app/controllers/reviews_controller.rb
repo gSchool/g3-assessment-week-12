@@ -9,6 +9,8 @@ end
 def index
   @reviews = Review.all
   @movies = Movie.all
+  @movie = Movie.new
+
 end
 
 def create

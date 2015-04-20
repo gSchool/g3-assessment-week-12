@@ -2,10 +2,9 @@
 
 
 <%= form_for [@movie, @review] do |f|  %>
-
-
+  <%if params[:movie_id] == nil %>
 <div><%= f.collection_select :movie_id, Movie.all, :id, :title, {include_blank: "All Movies"}, {class: "form-control"} %></div>
-
+<% end %>
 <br>
 <div><%= f.label :title %>
   <%= f.text_field :title %></div>
