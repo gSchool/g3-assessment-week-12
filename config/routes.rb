@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-  get '/new_movie_review' => 'reviews#newmovie'
-  post '/new_movie_review' => 'reviews#createmovie'
+  get '/movies/:id/reviews/new' => 'reviews#newmovie'
+  post '/movies/:id/reviews/new' => 'reviews#createmovie'
 
 
     get '/signup' => 'users#new'
@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     resources :movies do
       resources :reviews
     end
-
     resources :reviews
 
   # Example resource route with options:

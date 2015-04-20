@@ -19,12 +19,12 @@ class ReviewsController < ApplicationController
 
   def newmovie
     @review = Review.new
-    @movie = Movie.find_by(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   def createmovie
-    @movie = Movie.find_by(params[:id])
-    @review = @movie.reviews.new(review_params)
+    @movie = Movie.find(params[:id])
+    @review = current_user.reviews.new(review_params)
       if @review.save
         redirect_to reviews_path
       else
