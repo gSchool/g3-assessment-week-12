@@ -27,12 +27,14 @@ ActiveRecord::Schema.define(version: 20150420154627) do
   create_table "reviews", force: true do |t|
     t.string   "title"
     t.string   "body"
-    t.integer  "movies_id"
+    t.integer  "movie_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "reviews", ["movies_id"], name: "index_reviews_on_movies_id", using: :btree
+  add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"

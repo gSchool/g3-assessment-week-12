@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
+  before_action :check
 
   def index
-    @movies = Movie.all.sort_by(&:created_at)
+    @movies = Movie.all.sort_by(&:year).reverse
   end
 
   def new
@@ -18,6 +19,12 @@ class MoviesController < ApplicationController
   end
 
   private
+
+  def check
+    if !current_user
+      redirect_to root_path, notice: "Must be logged in to access resource"
+    end
+  end
 
   def movie_params
     params.require(:movie).permit(:name, :year, :synopsis)

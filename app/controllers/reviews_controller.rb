@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action :check
 
   def index
-    @reviews = Review.all.sort_by(&:created_at)
+    @reviews = Review.all.sort_by(&:created_at).reverse
   end
 
   def new
@@ -10,7 +11,12 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(title: params[:title], body: params[:body])
-    @movie = Movie.find_by(id: params[:movie][:id])
+    @review.user_id = current_user.id
+    if params[:movie_id]
+      @movie = Movie.find(params[:movie_id])
+    else
+      @movie = Movie.find(params[:movie][:id])
+    end
     if @movie
       @review.movie_id = @movie.id
     end
@@ -18,6 +24,14 @@ class ReviewsController < ApplicationController
       redirect_to reviews_path, notice: "Review saved"
     else
       render :new, notice: "Incorrect data"
+    end
+  end
+
+  private
+
+  def check
+    if !current_user
+      redirect_to root_path, notice: "Must be logged in to access resource"
     end
   end
 end
