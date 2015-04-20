@@ -1,0 +1,15 @@
+<%= form_for @movie do |f| %>
+<%= render partial:'shared/errors', locals: {object: @movie} %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+
+  <%= f.label :synopsis %>
+  <%= f.text_area :synopsis %>
+
+  <%= f.submit "Create Movie" %>
+
+<% end %>
