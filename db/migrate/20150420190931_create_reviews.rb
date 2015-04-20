@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.text :body
       t.timestamps null: false
       t.belongs_to :movie, index: true
+      t.belongs_to :user, index: true
     end
   end
 end
