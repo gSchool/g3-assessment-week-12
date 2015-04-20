@@ -1,5 +1,5 @@
 class Registration < ActiveRecord::Base
-   validates :username, :email, presence: true
+   validates :username, :password, presence: true
 
 
 end
