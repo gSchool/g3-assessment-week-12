@@ -3,7 +3,7 @@
 <%= link_to 'Add Movie', new_movie_path %>
 
 <% @movies.each do |movie| %>
-<strong><h4><%= movie.title %>   (<%= movie.year %>) </strong>  <%= link_to "New Review"%></h4>
+<strong><h4><%= movie.title %>   (<%= movie.year %>) </strong>  <%= link_to "New Review", new_movie_review_path(movie) %></h4>
 
 <div>
 <%= movie.about %>
