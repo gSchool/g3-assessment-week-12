@@ -10,9 +10,13 @@
 </head>
 <body>
   <% if notice %>
-    <h5><%= notice %></h5>
+    <h4><%= notice %></h4>
   <% end %>
   <br>
+  <% if current_user %>
+    <h5>Logged in as: <%= current_user.username %> - <%= link_to "Sign out", logout_path %></h5>
+    <br>
+  <% end %>
 
 <%= yield %>
 
