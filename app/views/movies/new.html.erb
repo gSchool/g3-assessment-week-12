@@ -12,17 +12,17 @@
 
 <%= form_for @movie do |f| %>
 
-<%= f.label :title %>
-<%= f.text_field :title %>
-<br />
-<%= f.label :year %>
-<%= f.text_field :year %>
-<br />
-<%= f.label :synopsis %>
-<%= f.text_area :synopsis %>
-<br />
-<%= f.submit %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+  <br />
+  <%= f.label :synopsis %>
+  <%= f.text_area :synopsis %>
+  <br />
+  <%= f.submit %>
 
 <% end %>
 
-<%= link_to 'back', movies_path %>
+<%= link_to 'back', root_path %>
