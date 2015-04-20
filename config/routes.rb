@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
 
-  get 'new/review' => 'reviews#new'
+  get 'reviews/new' => 'reviews#new'
+  post 'reviews/new' => 'reviews#create'
 
   resources :movies do
     resources :reviews
