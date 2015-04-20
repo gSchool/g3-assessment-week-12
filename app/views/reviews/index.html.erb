@@ -1,2 +1,19 @@
 <h1>Reviews</h1>
-<%= @reviews %>
+
+<%= link_to 'Back to Dashboard', root_path %><br />
+<br />
+
+<table>
+  <tr>
+    <th>Movie</th>
+    <th>Reviewer</th>
+    <th>Date</th>
+  </tr>
+  <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.movie.title %></td>
+      <td><%= review.user.username %></td>
+      <td><%= review.created_at.strftime("%m/%d/%Y") %></td>
+    </tr>
+  <% end %>
+</table>
