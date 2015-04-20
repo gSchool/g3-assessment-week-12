@@ -2,3 +2,13 @@
 <h3>Netflix for Nic Cage Movies</h3>
 <br />
 <%= link_to 'back to dashboard', root_path %>
+<br />
+<br />
+<% @movies.each do |film| %>
+  <strong>
+    <%= "#{film.title} (#{film.year})" %>
+  </strong>
+  <br />
+    <%= film.synopsis %>
+  <br />
+<% end %>
