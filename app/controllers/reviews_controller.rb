@@ -5,14 +5,18 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @movie = Movie.find(params[:movie_id])
+    unless params[:movie_id] == nil
+      @movie = Movie.find(params[:movie_id])
+    end
     @review = Review.new
   end
 
   def create
-    @movie = Movie.find(params[:movie_id])
     @review = Review.new(review_params)
-    @review.movie_id = @movie.id
+    if params[:movie_id] != nil
+      @movie = Movie.find(params[:movie_id])
+      @review.movie_id = @movie.id
+    end
     @review.user_id = current_user.id
     @review.date = DateTime.now
     if @review.save
