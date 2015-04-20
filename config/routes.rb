@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
 
   get 'reviews/new' => 'reviews#new'
   post 'reviews/new' => 'reviews#create'
@@ -17,10 +18,5 @@ Rails.application.routes.draw do
 
   resources :reviews, only: :index
   resources :users, only: [:new, :create]
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
 
 end
