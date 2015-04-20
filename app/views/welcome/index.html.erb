@@ -3,6 +3,10 @@
   <li><%= link_to 'Reviews', '/#' %></li>
   <li><%= link_to 'New Movie', new_movie_path %></li>
   <li><%= link_to 'New Review', '/#' %></li>
-  <li><%= link_to 'Sign Up', '/#' %></li>
-  <li><%= link_to 'Login', '/#' %></li>
+  <% if current_user %>
+  <li><%= link_to 'Logout', logout_path %></li>
+  <% else %>
+  <li><%= link_to 'Sign Up', signup_path %></li>
+  <li><%= link_to 'Login', login_path %></li>
+  <% end %>
 </ul>
