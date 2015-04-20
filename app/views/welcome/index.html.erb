@@ -16,13 +16,12 @@
 
 <p>
   <%= link_to "Sign Up", signup_path %>
-  Sign Up
 </p>
 
 <p>
-  Login
+  <%= link_to "Login", signin_path %>
 </p>
 
 <p>
-  Signed in as: <%= current_user.username %>
+  Signed in as: <%= current_user.username %> (<%= link_to "Sign Out", signout_path %>)
 </p>
