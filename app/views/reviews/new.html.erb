@@ -1,0 +1,21 @@
+<h1>New Review</h1>
+
+<%= form_for(@review) do |f| %>
+
+<div><%= f.collection_select :movie_id, Movie.all, :id, :name, { prompt: 'All Movies'} %></div>
+<br>
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<br>
+<div>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</div>
+<br>
+<div>
+  <%= f.submit 'Submit' %>
+</div>
+
+<% end %>

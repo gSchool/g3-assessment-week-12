@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end
+  resources :reviews
 
   get '/signup' => 'registrations#new', as: :signup
   post '/signup' => 'registrations#create'
