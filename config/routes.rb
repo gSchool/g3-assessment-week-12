@@ -8,7 +8,7 @@ root 'welcome#index'
 resources :users
 
 get "login" => "sessions#new", as: :signin
-post "signin" => "sessions#create"
+get "signup" => "users#new"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
