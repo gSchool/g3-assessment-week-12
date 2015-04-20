@@ -1,0 +1,22 @@
+%h1 Cageflix
+%h3 Netflix for Nic Cage Movies
+
+- if @movie.errors.any?
+  .alert
+    #{pluralize @movie.errors.count, 'error'}
+    prevented this movie from being saved
+    %ul
+      - @movie.errors.each do |field, message|
+        %li #{field} #{message}
+
+= form_for @movie do |f|
+  %fieldset
+    = f.label :name
+    = f.text_field :name
+  %fieldset
+    = f.label :year
+    = f.text_field :year
+  %fieldset
+    = f.label :synopsis
+    = f.text_area :synopsis
+  = f.submit
