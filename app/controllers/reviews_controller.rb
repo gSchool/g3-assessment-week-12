@@ -7,12 +7,22 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @movie = Movie.find_by(params[:movie_id])
+    if params[:movie_id].present?
+      @movie = Movie.find(params[:movie_id])
+    else
+      @movie = Movie.find_by(params[:movie_id])
+    end
   end
 
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    if params[:movie_id].present?
+      @movie = Movie.find(params[:movie_id])
+    else
+      @movie = Movie.find_by(params[:movie_id])
+    end
+    @review.movie_id = @movie.id
     if @review.save
       redirect_to reviews_path
     else

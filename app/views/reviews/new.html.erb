@@ -2,9 +2,7 @@
 
 <%= form_for([@movie, Review.new]) do |f| %>
 
-  <div>
-    <%= f.collection_select :movie_id, Movie.all, :id, :name, {prompt: 'Select Movie'} %>
-  </div>
+  <% if params[:movie_id].present? %>
   <div>
     <%= f.label :title %>
   </div>
@@ -20,6 +18,30 @@
   <div>
     <%= f.submit %>
   </div>
+
+  <% else %>
+
+  <div>
+    <%= f.collection_select :movie_id, Movie.all, :id, :name, {prompt: 'Select Movie'} %>
+  </div>
+
+  <div>
+    <%= f.label :title %>
+  </div>
+  <div>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :body %>
+  </div>
+  <div>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+  <% end %>
 
 
   <% end %>
