@@ -9,6 +9,10 @@
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
+  <% if notice %>
+    <h5><%= notice %></h5>
+  <% end %>
+  <br>
 
 <%= yield %>
 
