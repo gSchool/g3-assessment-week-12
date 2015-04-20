@@ -6,12 +6,17 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    if params[:movie_id] != nil
+      @movie = Movie.find(params[:movie_id])
+    end
   end
 
   def create
     @review = Review.new(review_params)
-    # @movie = Movie.find(params[:movie_id])
-    # @review.movie_id = @movie.id
+    if @review.movie_id == nil
+      @movie = Movie.find(params[:movie_id])
+      @review.movie_id = @movie.id
+    end
     @review.user_id = @current_user.id
     if @review.save
       redirect_to root_path
