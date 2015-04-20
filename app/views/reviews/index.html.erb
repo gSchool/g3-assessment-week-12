@@ -1,0 +1,15 @@
+<h1>Reviews</h1>
+<table>
+  <tr>
+    <th>Movie</th>
+    <th>Reviewer</th>
+    <th>Date</th>
+  </tr>
+  <% @reviews.each do |rev| %>
+    <tr>
+      <td><%= rev.movie.name %></td>
+      <td><%= rev.user.username %></td>
+      <td><%= rev.created_at %></td>
+    </tr>
+  <% end %>
+</table>
