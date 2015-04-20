@@ -8,9 +8,9 @@ class RegistrationController < ApplicationController
         session[:user_id] = @user.id
         redirect_to movies_path
      else
-     render :new
+        render :new
      end
-     end
+  end
 
 
 private

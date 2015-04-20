@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+before_action: :signin, only: [:create]
+
    def index
       @reviews = Review.all
    end

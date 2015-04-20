@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+before_action :signin, only: [:create]
+
    def index
       @movies = Movie.all
    end
@@ -33,5 +35,6 @@ class MoviesController < ApplicationController
       params.require(:movie).permit(:name, :date, :synopsis)
    end
 
+   def signin
 
 end
