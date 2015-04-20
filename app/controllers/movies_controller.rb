@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path, notice: "The movie was created"
     else
-      render :new, notice: "It didn't work :-("
+      render :new
     end
   end
 
