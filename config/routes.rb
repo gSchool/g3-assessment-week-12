@@ -8,6 +8,7 @@ root 'welcome#index'
   post '/sign-in' => 'sessions#create'
   get '/sign-out' => 'sessions#destroy', as: :signout
 
+resources :reviews
 resources :users
 resources :movies do
   resources :reviews
