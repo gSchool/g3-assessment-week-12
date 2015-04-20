@@ -9,8 +9,7 @@
     = f.hidden_field :movie_id
   - else
     %fieldset
-      = f.label :movie
-      = f.collection_select :movie_id, @movies, :id, :name
+      = f.collection_select :movie_id, @movies, :id, :name, prompt: 'All Movies'
   %fieldset
     = f.label :title
     = f.text_field :title
