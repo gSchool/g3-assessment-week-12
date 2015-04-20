@@ -20,7 +20,7 @@ class SessionsController
   end
 
   def destroy
-    session.clear
+    session.delete
     redirect_to root_path, notice:"Come again soon!"
   end
 end

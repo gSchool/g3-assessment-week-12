@@ -2,5 +2,5 @@ class Review < ActiveRecord::Base
   belongs_to :movie
   belongs_to :user
 
-  validates :title, :body, presence: true
+  validates :title, :bodwy, presence: true
 end
