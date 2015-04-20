@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
+    @movies = Movie.order(:year)
   end
 
   def new
@@ -24,5 +24,5 @@ class MoviesController < ApplicationController
    params.require(:movie).permit(:name, :year, :synopsis, :id)
  end
 
- 
+
 end
