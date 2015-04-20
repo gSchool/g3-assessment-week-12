@@ -1,0 +1,25 @@
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+
+<div class="page-header">
+  <h1>Cageflix</h1>
+  <h2>Netflix for Nic Cage movies</h2>
+
+  <%= link_to "Add a movie", new_movie_path %>
+</div>
+
+
+<div class="row">
+  <div class="movies col-md-4">
+    <% @movies.each do |movie| %>
+
+    <p style="font-weight:bold;">
+      <%= "#{movie.name} (#{movie.year})" %> <%= link_to "New Review", new_movie_review_path(movie)  %>
+    </p>
+    <p>
+      <%= movie.synopsis %>
+    </p>
+    <% end %>
+  </div>
+</div>
