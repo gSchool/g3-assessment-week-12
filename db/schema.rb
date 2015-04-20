@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20150420174041) do
   create_table "movies", force: true do |t|
     t.string   "title"
     t.text     "about"
-    t.datetime "release_year"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: true do |t|
