@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   get 'reviews/new' => 'reviews#new'
   post 'reviews/new' => 'reviews#create'
 
-  resources :movies do
-    resources :reviews, except: :index
+  resources :movies, only: [:index, :create, :new] do
+    resources :reviews, only: [:new, :create]
   end
 
   resources :reviews, only: :index
