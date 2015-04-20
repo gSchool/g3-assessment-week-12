@@ -28,11 +28,13 @@ ActiveRecord::Schema.define(version: 20150420160402) do
     t.string   "title"
     t.string   "body"
     t.integer  "movie_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

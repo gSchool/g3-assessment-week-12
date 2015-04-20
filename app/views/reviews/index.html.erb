@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= @reviews.each do |review| %>
+    <% @reviews.each do |review| %>
     <tr>
       <td>
         <%= review.movie.name %>
@@ -22,7 +22,7 @@
         <%= review.user.name %>
       </td>
       <td>
-        <%= review.created_at %>
+        <%= review.created_at.strftime("%m/%d/%Y") %>
       </td>
     </tr>
     <% end %>

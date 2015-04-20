@@ -51,3 +51,4 @@ private
   def review_params
     params.require(:review).permit(:title, :body, :movie_id)
   end
+end
