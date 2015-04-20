@@ -1,9 +1,14 @@
+<h1>Cageflix</h1>
+<h2>Netflix for Nic Cage Movies</h1>
+
 <% if flash[:notice] %>
    <div class="notice"><%= flash[:notice] %></div>
  <% end %>
 
 <%= link_to 'Movies', movies_path %><br>
+<%= link_to 'Reviews', reviews_path %><br>
 <%= link_to 'New Movie', new_movie_path %><br>
+<%= link_to 'New Review', reviews_new_path %><br>
 <%# unless current_user %>
 <%= link_to 'Log In', signin_path %><br>
 <%= link_to 'Sign Up', users_path %><br>

@@ -31,4 +31,8 @@ group :test, :development do
   gem "rspec-rails", "~> 3.0.2"
   gem "capybara", "~> 2.4.1"
   gem "launchy", "~> 2.4.2"
+  gem 'better_errors'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'binding_of_caller'
 end

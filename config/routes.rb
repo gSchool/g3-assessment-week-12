@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end
 
   root 'welcome#index'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/users' => 'users#new'
   post '/users' => 'users#create'
+  get '/reviews' => 'reviews#index'
+  get '/reviews/new' => 'reviews#new_from_home'
+  post '/reviews' => 'reviews#create'
 
 
   # Example of regular route:
