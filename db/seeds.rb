@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.create(:username => 'Jake', :password => 'a')
+Movie.create(:name => 'The Wickerman', :year => 2006, :synopsis => "Funny stuff")
+Movie.create(:name => 'The Rock', :year => 1996, :synopsis => "Crazy stuff")
+Movie.create(:name => 'The Weatherman', :year => 2003, :synopsis => "Ridiculous stuff")
