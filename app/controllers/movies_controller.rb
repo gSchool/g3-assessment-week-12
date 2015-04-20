@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.order(:year)
+    @movies = Movie.order(year: :desc)
   end
 
   def new
