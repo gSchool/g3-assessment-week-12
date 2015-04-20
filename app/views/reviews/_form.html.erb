@@ -1,0 +1,31 @@
+<% if params[:movie_id] %>
+  <%= form_tag(reviews_path(movie_id: params[:movie_id]), method: :post) do %>
+    <br>
+    <br>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+    <br>
+    <br>
+    <%= label_tag :body %>
+    <%= text_area_tag :body, nil, size: "40x10" %>
+    <br>
+    <br>
+    <%= submit_tag %>
+  <% end %>
+<% else %>
+  <%= form_tag(reviews_path, method: :post) do %>
+    <%= label_tag :movie %>
+    <%= collection_select :movie, :id, Movie.all, :id, :name, {prompt: "All Movies"} %>
+    <br>
+    <br>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+    <br>
+    <br>
+    <%= label_tag :body %>
+    <%= text_area_tag :body, nil, size: "40x10" %>
+    <br>
+    <br>
+    <%= submit_tag %>
+  <% end %>
+<% end %>

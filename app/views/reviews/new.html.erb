@@ -1,0 +1,6 @@
+<% if params[:movie_id] %>
+  <h1>New Review for <%= Movie.find(params[:movie_id]).name %></h1>
+<% else %>
+  <h1>New Review</h1>
+<% end %>
+<%= render 'form' %>

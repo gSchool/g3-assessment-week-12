@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+#bcrypt for auth
+gem 'bcrypt'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -27,6 +29,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :test, :development do
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'byebug'
   gem "rspec-rails", "~> 3.0.2"
   gem "capybara", "~> 2.4.1"
   gem "launchy", "~> 2.4.2"
