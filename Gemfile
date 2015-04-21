@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+gem 'bcrypt'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,6 +28,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :test, :development do
+  gem "pry-rails"
+  gem "pry-byebug"
   gem "rspec-rails", "~> 3.0.2"
   gem "capybara", "~> 2.4.1"
   gem "launchy", "~> 2.4.2"
