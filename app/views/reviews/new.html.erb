@@ -1,0 +1,11 @@
+<h1>New Review</h1>
+<%= form_for [@movie, @review] do |f| %>
+<p><%= f.label 'Title' %></p>
+<p><%= f.text_field :title %></p>
+<% if !(params[:movie_id].present?) %>
+<%= f.collection_select :movie_id, Movie.all, :id, :title %>
+<% end %>
+<p><%= f.label 'Body' %></p>
+<p><%= f.text_area :body %></p>
+<%= f.submit 'Submit' %>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Cageflix<h1>
+<h4>Netflix for Nic Cage movies</h4>
+<p><%= link_to 'Add Movie', new_movie_path %></p>
+
+<% @movies.each do |movie| %>
+<strong><%= "#{movie.title} (#{movie.year_produced})" %></strong> <%= link_to "New Review", new_movie_review_path(movie) %>
+<p><%= movie.description %></p>
+<% end %>
+
+<!-- new_movie_review_path(:movie_id => "#{movie.id}") -->
+<!-- (movie_id: "#{movie.id}") -->
+<!-- new_movie_review_path(movie_id: movie.id) %> -->
