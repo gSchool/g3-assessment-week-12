@@ -12,7 +12,7 @@ class RegistrationController < ApplicationController
      if @user.save
         session[:user_id] = @user.id
         redirect_to movies_path
-     else 
+     else
         render :new
      end
   end
@@ -20,6 +20,7 @@ class RegistrationController < ApplicationController
 
 private
 def user_params
-   params.require(:user).permit(:username, :password)
+   params.require(:user).permit(:username, :password, :password_confirmation)
 end
+
 end
