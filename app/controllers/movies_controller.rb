@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-before_action :signin, only: [:create]
+before_action: :authenticate
 
    def index
       @movies = Movie.all
@@ -10,18 +10,13 @@ before_action :signin, only: [:create]
    end
 
    def create
-      @movie = Movie.new(params[:id])
+      @movie = Movie.new(movie_params)
       if @movie.save
          redirect_to movies_path
       else
          render :new
       end
    end
-
-   def show
-      @movie = Movie.find(params[:id])
-   end
-
 
 
 
@@ -32,11 +27,8 @@ before_action :signin, only: [:create]
    end
 
    def movie_params
-      params.require(:movie).permit(:name, :date, :synopsis)
+      params.require(:movie).permit(:name, :year, :synopsis)
    end
 
-   def signin
-      session[:user_id] = @user.id
-   end
 
 end
