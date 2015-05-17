@@ -10,12 +10,13 @@ Rails.application.routes.draw do
      resources  :reviews
    end
 
-   resources  :reviews
-   
+   resources  :reviews, only:[:index, :create]
+
    get 'signup' => 'users#new'
    post 'users' => 'users#create'
    get 'login' => 'sessions#new'
    post 'login' => 'sessions#create'
+   get '/reviews/new' => 'reviews#new_review', as: :new_review
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

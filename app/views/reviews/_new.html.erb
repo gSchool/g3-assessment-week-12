@@ -1,0 +1,32 @@
+<h1>New Review</h1>
+
+<%= form_for @review do |f|  %>
+<%  f.object.errors.present? %>
+<div class="alert alert-danger">
+  <%f.object.errors.full_messages.each do |error| %>
+  <div class= "errors">
+  </div>
+  <%end%>
+
+<% if current_page? new_review_path %>
+  <%= f.collection_select :movie_id, Movie.all, :id, :title, {include_blank: 'All Movies'}, {class: 'form-control'} %>
+<% end %>
+<div>
+</div>
+
+<br>
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<br>
+<div>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</div>
+<br>
+<div>
+  <%= f.submit "Review" %>
+</div>
+
+<% end %>
