@@ -9,8 +9,28 @@
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
+<%= current_user.username %>
+<br>
+<%= link_to "Home", root_path %>
 
 <%= yield %>
+
+<div class="container">
+  <% flash.each do |type, message| %>
+
+  <% if type == "notice" %>
+
+  <div class="alert alert-success"><center><%= message %></center>
+  </div>
+
+  <% else %>
+
+  <div class="alert alert-danger"><center><%= message %></center>
+  </div>
+</div>
+<% end %>
+<% end %>
+
 
 </body>
 </html>
