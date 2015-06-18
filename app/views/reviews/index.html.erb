@@ -1,0 +1,23 @@
+<h1>Reviews</h1>
+<table class="table table-striped">
+   <thead>
+      <th>Movie</th>
+      <th>Reviewer</th>
+      <th>Date</th>
+
+      <tbody>
+         <% @reviews.each do |review| %>
+         <tr>
+         <td>
+            <%= review.movie %>
+         </td>
+         <td>
+            <%= review.reviewer %>
+         </td>
+         <td>
+            <%= review.date %>
+         </tr>
+            <% end %>
+      </tbody>
+   </thead>
+</table>

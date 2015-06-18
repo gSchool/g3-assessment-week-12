@@ -1,0 +1,18 @@
+<strong> <h1> Cageflix </h1> </strong>
+<h1> New Review </h1>
+
+<hr>
+
+<% form_for [@movie, @review] do |f| %>
+
+<%= f.collection_select :movie_id, Movies.all, :id, :name, {class: "form-horizontal"} %>
+
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+
+<%= f.label :body %>
+<%= f.text_field :body %><br>
+
+<%= f.submit %><br>
+
+<% end %>

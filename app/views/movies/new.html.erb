@@ -1,0 +1,20 @@
+<strong> <h1> Cageflix </h1> </strong>
+<h1> Add New Movie </h1>
+
+<hr>
+
+<%= form_for (@movie) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name, class: 'form-control' %> <br>
+
+<%= f.label :date %>
+<%= f.text_field :date %><br>
+
+<%= f.label :synopsis %>
+<%= f.text_area :synopsis %><br>
+
+
+<%= f.submit %><br>
+
+<% end %>
